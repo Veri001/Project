@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Showcase</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Required Core Stylesheet -->
+<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+
+    <!-- Optional Theme Stylesheet -->
+<link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+</head>
+
+                        <!-- Top -->
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Add color to your<br>masterpiece</h1>
+            <button>Shop Now</button>
+        </div>
+    </div>
+
+                        <!-- Products -->
+    <div class="products-container">
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="scrollProducts(-300)">&#60;</button>
+            <button class="nav-btn" onclick="scrollProducts(300)">&#62;</button>
+        </div>
+        <div class="product-flex" id="product-scroll">
+            <div class="product">
+                <img src="/img/2flexbox.png" alt="Glide">
+                <p>GLIDE</p>
+            </div>
+            <div class="product">
+                <img src="/img/2.png" alt="Magnetic Core Bobbin">
+                <p>MAGNETIC CORE BOBBIN</p>
+            </div>
+            <div class="product">
+                <img src="/img/22.png" alt="Premium Stabilizer">
+                <p>PREMIUM STABILIZER</p>
+            </div>
+            <div class="product">
+                <img src="/img/2flexbox.png" alt="Thread Set">
+                <p>THREAD SET</p>
+            </div>
+            <div class="product">
+                <img src="/img/2.png" alt="Sewing Kit">
+                <p>SEWING KIT</p>
+            </div>
+            <div class="product">
+                <img src="/img/22.png" alt="Fabric Roll">
+                <p>FABRIC ROLL</p>
+            </div>
+        </div>
+    </div>
+
+                         <!--Bottom Section Carousel-->
+    <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            <li class="glide__slide"><img src="/img/3img.png" alt="">
+                <p class="product-name">Product 1</p>
+            </li>
+            <li class="glide__slide"><img src="/img/33.png" alt="">
+                <p class="product-name">Product 2</p>
+            </li>
+            <li class="glide__slide"><img src="/img/33.png" alt="">
+                <p class="product-name">Product 3</p>
+            </li>
+            <li class="glide__slide"><img src="/img/333.png" alt="">
+                <p class="product-name">Product 4</p>
+            </li>
+
+        </ul>
+        </div>
+        <div class="glide__arrows" data-glide-el="controls">
+            <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                prev
+            </button>
+            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                next
+            </button>
+          </div>
+    </div>
+    
+
+    <script>
+        function scrollProducts(distance) {
+            document.getElementById('product-scroll').scrollBy({
+                left: distance,
+                behavior: 'smooth'
+            });
+        }
+
+        
+    </script>
+                
+                <!--carousel js-->
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
+    <script>
+    new Glide('.glide',{
+        type:"carousel",
+        perView: 3,
+        autoplay: 4000,
+        breakpoints:{
+            1300:{
+                perView:2,
+            },
+            1000:{
+                perView:1,
+            },
+        },
+    }).mount()
+    </script>
+    
+</body>
+</html>

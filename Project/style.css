@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+/*Top*/
+.hero {
+    background: url('/img/1img.png') no-repeat center center/cover;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10%;
+    text-align: right;
+    color: white;
+    margin-bottom: 70px;
+}
+
+.hero-content {
+    max-width: 400px;
+}
+
+.hero h1 {
+    font-size: 3em;
+    word-break: break-word;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 15px 30px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.hero button:hover{
+    background-color: white;
+    color: black;
+}
+
+/*Products*/
+.featured-products {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+
+.featured-products h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.products-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 10%;
+    position: relative;
+}
+
+.product-flex {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+}
+
+.product {
+    flex: 0 0 auto;
+    text-align: center;
+    width: 300px;
+}
+
+.product img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product p {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+.nav-btn {
+    background: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+/* Carousel */
+.glide{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img{
+    width: 100%;
+    height: 50vh;
+}
+
+.glide__slide {
+    text-align: center;
+}
+
+.glide__slide img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.product-name {
+    margin-top: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.glide__arrow{
+    
+    color: black !important;  /* Ndryshon ngjyrën e ikonës */
+    background-color: transparent !important;  /* Siguron sfond transparent */
+    border: 2px solid black !important;  /* Kufizë e zezë për t'u dalluar më mirë */
+}
+
+
+
+/* Responsive for mobile */
+@media (max-width: 768px) {
+    .hero {
+        height: 400px;
+        padding-right: 5%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    .products-container {
+        flex-direction: column;
+        margin: 20px 5%;
+    }
+
+    .product-flex {
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow-x: hidden;
+    }
+
+    .product {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .glide {
+        height: auto;
+    }
+
+    .glide__slide img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .product-name {
+        font-size: 1.2em;
+    }
+}
+
+/* Very Small screens */
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+
+    .product {
+        max-width: 200px;
+    }
+
+    .product-name {
+        font-size: 1em;
+    }
+}
+
